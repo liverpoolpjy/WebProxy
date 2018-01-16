@@ -151,8 +151,6 @@ try:
         except pymysql.err.DataError as e:
             logger.error('Data exception')
             logger.error(traceback.format_exc())
-        finally:
-            logger.error(flow)
 
 
     def request_hash_and_keys(flow):
