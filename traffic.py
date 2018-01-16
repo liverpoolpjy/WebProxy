@@ -11,9 +11,9 @@
         mitmdump -p 8088 -s "traffic.py proxy.mitm" -z
 
     :author:    Feei <feei@feei.cn>
-    :homepage:  https://github.com/wufeifei/t1.proxy
+    :homepage:  https://github.com/FeeiCN/t1.proxy
     :license:   GPL, see LICENSE for more details.
-    :copyright: Copyright (c) 2017 Feei. All rights reserved
+    :copyright: Copyright (c) 2018 Feei. All rights reserved
 """
 import sys
 import json
