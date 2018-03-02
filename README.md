@@ -1,4 +1,4 @@
-# T1.Proxy
+# WebProxy
 > Create an HTTP / HTTPS proxy server based on MITMProxy and log all requests to the log file and parse the log for rewriting into the database.
 
 > 基于MITMProxy创建HTTP/HTTPS代理服务器，并记录所有请求到日志文件，解析日志去重写入数据库。
