@@ -8,7 +8,7 @@
     实现将代理服务器中的请求流量实时写入文件。
 
     Usage:
-        mitmdump -p 8088 -s "traffic.py proxy.mitm" -z
+        mitmdump -p 8088 -s traffic.py
 
     :author:    Feei <feei@feei.cn>
     :homepage:  https://github.com/FeeiCN/t1.proxy
@@ -22,7 +22,7 @@ import base64
 from mitmproxy import http, ctx, websocket
 
 if len(sys.argv) < 2:
-    print('Usage: mitmdump -p 8088 -s "traffic.py proxy.mitm" -z')
+    print('Usage: mitmdump -p 8088 -s traffic.py')
     exit(0)
 
 
