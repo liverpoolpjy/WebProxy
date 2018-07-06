@@ -11,7 +11,7 @@
         mitmdump -p 8088 -s traffic.py
 
     :author:    Feei <feei@feei.cn>
-    :homepage:  https://github.com/FeeiCN/t1.proxy
+    :homepage:  https://github.com/FeeiCN/WebProxy
     :license:   GPL, see LICENSE for more details.
     :copyright: Copyright (c) 2018 Feei. All rights reserved
 """
@@ -37,7 +37,7 @@ class DateEncoder(json.JSONEncoder):
 # 在响应事件中做可以同时取到Request和Response
 # http://docs.mitmproxy.org/en/latest/scripting/events.html#response
 def response(flow: http.HTTPFlow) -> None:
-    with open(sys.argv[1], 'a') as f:
+    with open('proxy.mitm', 'a') as f:
         try:
             data = flow.get_state()
             # 去掉不需要的信息
