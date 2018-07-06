@@ -8,7 +8,7 @@
     实现了实时读取代理的流量信息，去重并写入数据库。
 
     Usage:
-        mitmdump -p 8088 -s traffic.py
+        python stash.py proxy.mitm
 
     :author:    Feei <feei@feei.cn>
     :homepage:  https://github.com/FeeiCN/WebProxy
