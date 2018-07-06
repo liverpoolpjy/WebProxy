@@ -22,10 +22,8 @@ pip install -r requirements.txt
 | 代理服务器端口 | 8088 |
 
 ```
-mitmdump -p 8088 -s "traffic.py proxy.mitm" -z
+mitmdump -p 8088 -s traffic.py
 ```
-
-注：-z 解析gzip/deflate/defalte-raw之类的响应内容
 
 ## Config devices proxy (配置各端代理)
 > 在各端配置好代理后，访问`http://mitm.it`下载CA证书，并按照以下方式进行验证。
