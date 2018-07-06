@@ -8,10 +8,10 @@
     实现了实时读取代理的流量信息，去重并写入数据库。
 
     Usage:
-        mitmdump -p 8088 -s "traffic.py proxy.mitm" -z
+        mitmdump -p 8088 -s traffic.py
 
     :author:    Feei <feei@feei.cn>
-    :homepage:  https://github.com/FeeiCN/t1.proxy
+    :homepage:  https://github.com/FeeiCN/WebProxy
     :license:   GPL, see LICENSE for more details.
     :copyright: Copyright (c) 2018 Feei. All rights reserved
 """
