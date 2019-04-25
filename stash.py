@@ -138,7 +138,8 @@ try:
                     req_headers,
                     req_content,
                     flow['request']['timestamp_start'],
-                    ','.join(req_keys),
+                    # ','.join(req_keys),
+                    req_keys,
                     req_hash,
                     flow['response']['status_code'],
                     flow['response']['reason'],
@@ -168,25 +169,32 @@ try:
             paths = ''
 
         # 处理params，找到keys
-        keys = []
+        # keys = []
+        # if '?' in path:
+        #     path_split_question = path.split('?')
+        #     # 存在query参数，存储query key
+        #     # 比如x.com/x/y/z?a=1&b=2，储存a,b
+        #     query = path_split_question[1]  # a=1&b=2
+        #     if '&' in query:
+        #         # [a=1,b=2]
+        #         kvs = query.split('&')
+        #     else:
+        #         # [a=1]
+        #         kvs = [query]
+        #     for kv in kvs:
+        #         if '=' in kv:
+        #             # a
+        #             keys.append(kv.split('=')[0])
+        #         else:
+        #             # a
+        #             keys.append(kv)
+
+        # 保留 url query 的 keys & values
+        keys = ''
         if '?' in path:
-            path_split_question = path.split('?')
-            # 存在query参数，存储query key
-            # 比如x.com/x/y/z?a=1&b=2，储存a,b
-            query = path_split_question[1]  # a=1&b=2
-            if '&' in query:
-                # [a=1,b=2]
-                kvs = query.split('&')
-            else:
-                # [a=1]
-                kvs = [query]
-            for kv in kvs:
-                if '=' in kv:
-                    # a
-                    keys.append(kv.split('=')[0])
-                else:
-                    # a
-                    keys.append(kv)
+            keys = path.split('?')[1:]
+            keys = '?'.join(keys)
+
         # 计算hash
         data = '{method}{scheme}{host}{port}{path}'.format(
             method=flow['request']['method'],
