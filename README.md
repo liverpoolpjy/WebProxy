@@ -10,7 +10,6 @@ http://docs.mitmproxy.org/en/stable/install.html
 
 #### Python module
 ```
-cd t1.proxy/
 pip install -r requirements.txt
 ```
 
@@ -54,7 +53,7 @@ mitmdump -p 8088 -s traffic.py
 export host="127.0.0.1"
 export user="your_username"
 export password="your_password"
-export database="t1.proxy"
+export database="t1_proxy"
 
 # 启动脚本
 python stash.py proxy.mitm
